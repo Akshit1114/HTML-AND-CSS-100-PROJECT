@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgb(15, 168, 244),  rgb(225, 125, 44));
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    position: relative;
+    height: 60vh;
+    width: 100vh;
+}
+
+.clip{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.clip1 {
+    background-image: url(./assets/Dragon1.jpg);
+    background-size: cover;
+    clip-path:  polygon(0 0, 100% 0, 50% 50%, 100% 100%, 0 100%, 50% 50%);
+    background-position: center;
+}
+
+.clip2 {
+    background-image: url(./assets/Dragon2.webp);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(50% 50%, 0 0, 0 100%);
+}
+
+.clip3{
+    background-image: url(./assets/Dragon3.jpg);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+}
+
+.container:hover .clip {                   /*“When you hover over an element with class .container, then apply the following styles to the element(s) with class .clip inside that container.”*/
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+
+.container .clip:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
